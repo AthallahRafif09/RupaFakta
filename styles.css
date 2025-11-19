@@ -164,15 +164,21 @@ body {
 }
 
 .illustration-placeholder {
-  width: 100%;
-  max-width: 500px;
-  height: 400px;
-  background: linear-gradient(135deg, #8da9c4 0%, #134074 100%);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-img {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.hero-img {
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.15));
 }
 
 .illustration-placeholder svg {
