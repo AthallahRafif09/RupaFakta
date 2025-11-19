@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masuk / Daftar - RupaFakta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="sign-in-up.css">
+    <link rel="icon" href="../image/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <!-- NAVBAR MINI -->
+    <nav class="navbar">
+      <a href="index.html" class="logo">RupaFakta</a>
+    </nav>
+
+    <!-- MAIN CONTAINER -->
+    <div class="main-container">
+      <div class="auth-card">
+        <!-- ERROR MESSAGE -->
+        <div class="error-message" id="errorMessage"></div>
+
+        <!-- SUCCESS MESSAGE -->
+        <div class="success-message" id="successMessage"></div>
+
+        <!-- SIGN IN FORM -->
+        <div id="signInForm">
+          <div class="auth-header">
+            <h1 class="auth-title">Masuk ke RupaFakta</h1>
+            <p class="auth-subtitle">
+              Selamat datang kembali! Silakan masuk untuk melanjutkan.
+            </p>
+          </div>
+
+          <form id="loginForm">
+            <div class="form-group">
+              <label class="form-label" for="loginEmail">Email</label>
+              <input
+                type="email"
+                id="loginEmail"
+                class="form-input"
+                placeholder="nama@email.com"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="loginPassword">Password</label>
+              <input
+                type="password"
+                id="loginPassword"
+                class="form-input"
+                placeholder="Masukkan password Anda"
+                required
+              />
+              <a href="#" class="forgot-password" id="forgotPasswordLink"
+                >Lupa password?</a
+              >
+            </div>
+
+            <button type="submit" class="btn-primary" id="loginBtn">
+              Masuk
+            </button>
+          </form>
+
+          <div class="divider">
+            <span>atau masuk dengan</span>
+          </div>
+
+          <button type="button" class="btn-google" id="googleLoginBtn">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.8 10.2273C19.8 9.52727 19.7364 8.85455 19.6182 8.20909H10.2V12.05H15.5818C15.3273 13.3 14.5636 14.3591 13.4182 15.0682V17.5773H16.7364C18.6091 15.8364 19.8 13.2727 19.8 10.2273Z"
+                fill="#4285F4"
+              />
+              <path
+                d="M10.2 20C12.9 20 15.1636 19.1045 16.7364 17.5773L13.4182 15.0682C12.4636 15.6682 11.2364 16.0227 10.2 16.0227C7.59091 16.0227 5.38182 14.2636 4.53636 11.9H1.09091V14.4909C2.65455 17.5909 6.17273 20 10.2 20Z"
+                fill="#34A853"
+              />
+              <path
+                d="M4.53636 11.9C4.31818 11.3 4.19091 10.6591 4.19091 10C4.19091 9.34091 4.31818 8.7 4.53636 8.1V5.50909H1.09091C0.409091 6.85909 0 8.38636 0 10C0 11.6136 0.409091 13.1409 1.09091 14.4909L4.53636 11.9Z"
+                fill="#FBBC05"
+              />
+              <path
+                d="M10.2 3.97727C11.3409 3.97727 12.3591 4.35909 13.1591 5.10909L16.1091 2.15909C15.1591 1.28636 12.9 0 10.2 0C6.17273 0 2.65455 2.40909 1.09091 5.50909L4.53636 8.1C5.38182 5.73636 7.59091 3.97727 10.2 3.97727Z"
+                fill="#EA4335"
+              />
+            </svg>
+            Masuk dengan Google
+          </button>
+
+          <div class="toggle-mode">
+            Belum punya akun? <a href="#" id="showSignUp">Daftar sekarang</a>
+          </div>
+        </div>
+
+        <!-- SIGN UP FORM -->
+        <div id="signUpForm" class="hidden">
+          <div class="auth-header">
+            <h1 class="auth-title">Buat Akun Baru</h1>
+            <p class="auth-subtitle">
+              Bergabunglah untuk mulai memverifikasi informasi dengan mudah.
+            </p>
+          </div>
+
+          <form id="registerForm">
+            <div class="form-group">
+              <label class="form-label" for="registerName">Nama Lengkap</label>
+              <input
+                type="text"
+                id="registerName"
+                class="form-input"
+                placeholder="Masukkan nama lengkap Anda"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="registerEmail">Email</label>
+              <input
+                type="email"
+                id="registerEmail"
+                class="form-input"
+                placeholder="nama@email.com"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="registerPassword">Password</label>
+              <input
+                type="password"
+                id="registerPassword"
+                class="form-input"
+                placeholder="Minimal 8 karakter"
+                required
+              />
+              <div class="password-strength" id="passwordStrength">
+                <div class="strength-bar">
+                  <div class="strength-bar-fill"></div>
+                </div>
+                <span class="strength-text"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="registerPasswordConfirm"
+                >Konfirmasi Password</label
+              >
+              <input
+                type="password"
+                id="registerPasswordConfirm"
+                class="form-input"
+                placeholder="Masukkan password sekali lagi"
+                required
+              />
+            </div>
+
+            <button type="submit" class="btn-primary" id="registerBtn">
+              Buat Akun
+            </button>
+
+            <p class="microcopy">
+              📝 Akun diperlukan untuk menyimpan riwayat pengecekan.
+            </p>
+          </form>
+
+          <div class="divider">
+            <span>atau daftar dengan</span>
+          </div>
+
+          <button type="button" class="btn-google" id="googleSignUpBtn">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.8 10.2273C19.8 9.52727 19.7364 8.85455 19.6182 8.20909H10.2V12.05H15.5818C15.3273 13.3 14.5636 14.3591 13.4182 15.0682V17.5773H16.7364C18.6091 15.8364 19.8 13.2727 19.8 10.2273Z"
+                fill="#4285F4"
+              />
+              <path
+                d="M10.2 20C12.9 20 15.1636 19.1045 16.7364 17.5773L13.4182 15.0682C12.4636 15.6682 11.2364 16.0227 10.2 16.0227C7.59091 16.0227 5.38182 14.2636 4.53636 11.9H1.09091V14.4909C2.65455 17.5909 6.17273 20 10.2 20Z"
+                fill="#34A853"
+              />
+              <path
+                d="M4.53636 11.9C4.31818 11.3 4.19091 10.6591 4.19091 10C4.19091 9.34091 4.31818 8.7 4.53636 8.1V5.50909H1.09091C0.409091 6.85909 0 8.38636 0 10C0 11.6136 0.409091 13.1409 1.09091 14.4909L4.53636 11.9Z"
+                fill="#FBBC05"
+              />
+              <path
+                d="M10.2 3.97727C11.3409 3.97727 12.3591 4.35909 13.1591 5.10909L16.1091 2.15909C15.1591 1.28636 12.9 0 10.2 0C6.17273 0 2.65455 2.40909 1.09091 5.50909L4.53636 8.1C5.38182 5.73636 7.59091 3.97727 10.2 3.97727Z"
+                fill="#EA4335"
+              />
+            </svg>
+            Daftar dengan Google
+          </button>
+
+          <div class="toggle-mode">
+            Sudah punya akun? <a href="#" id="showSignIn">Masuk</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module" src="sign-in-up.js"></script>
+  </body>
+</html>
